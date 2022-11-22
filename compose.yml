@@ -1,0 +1,48 @@
+name: react-aspnet-postgres
+services:
+  frontend:
+    build:
+      context: frontend
+      target: development
+    networks:
+      - client-side
+    ports:
+      - 3000:3000
+    volumes:
+      - ./frontend/src:/code/src:ro
+
+  backend:
+    build:
+      context: backend
+    restart: always
+    # secrets:
+    #   - db-password
+    environment:
+      - ASPNETCORE_URLS=http://+:8443
+    networks:
+      - client-side
+      - server-side
+    volumes:
+      - ./backend:/src
+    depends_on:
+      - db
+
+  # db:
+  #   image: postgres:12-alpine
+  #   restart: always
+  #   environment:
+  #     - POSTGRES_PASSWORD=mysecretpassword
+  #   networks:
+  #     - server-side
+  #   ports:
+  #     - 5432:5432
+  #   volumes:
+  #     - db-data:/var/lib/postgresql/data
+
+networks:
+  client-side: {}
+  server-side: {}
+
+volumes:
+  backend-cache: {}
+  # db-data: {}
