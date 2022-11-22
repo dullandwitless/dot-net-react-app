@@ -1,0 +1,75 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>TTEC.EMPOWER.API</name>
+    </assembly>
+    <members>
+        <member name="M:TTEC.EMPOWER.API.Controllers.InformaticaController.#ctor(TTEC.EMPOWER.Business.Interfaces.IInformaticaService)">
+            <summary>
+            InfomrticaController Constructor
+            </summary>
+            <param name="informaticaService"></param>
+        </member>
+        <member name="M:TTEC.EMPOWER.API.Controllers.InformaticaController.GetIDMTicketDetailsFromInfromatica(System.String)">
+            <summary>
+            Get IdmTicket Details From Informatica
+            </summary>
+            <param name="idmTicketNumber"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TTEC.EMPOWER.API.Controllers.UserController.#ctor(MediatR.IMediator,Microsoft.Extensions.Logging.ILogger{TTEC.EMPOWER.API.Controllers.UserController})">
+            <summary>
+            UserController Constructor
+            </summary>
+        </member>
+        <member name="M:TTEC.EMPOWER.API.Controllers.UserController.GetUser(TTEC.EMPOWER.Business.Features.Queries.GetUserById.GetUserByIdQuery)">
+            <summary>
+            Get User Details By UserId
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="T:TTEC.EMPOWER.API.Extensions.ServiceRegistrationExtension">
+            <summary>
+            ServiceRegistrationExtension Class
+            </summary>
+        </member>
+        <member name="M:TTEC.EMPOWER.API.Extensions.ServiceRegistrationExtension.AddInfrastructure(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            AddInfrastructure Method
+            </summary>
+            <param name="services"></param>
+        </member>
+        <member name="M:TTEC.EMPOWER.API.Extensions.ConfigureSwaggerOptions.#ctor(Microsoft.AspNetCore.Mvc.ApiExplorer.IApiVersionDescriptionProvider)">
+            <summary>
+            ConfigureSwaggerOptions Constructor
+            </summary>
+            <param name="provider"></param>
+        </member>
+        <member name="M:TTEC.EMPOWER.API.Extensions.ConfigureSwaggerOptions.Configure(Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenOptions)">
+            <summary>
+            Configure
+            </summary>
+            <param name="options"></param>
+        </member>
+        <member name="M:TTEC.EMPOWER.API.Startup.#ctor(Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            Startup class
+            </summary>
+            <param name="configuration"></param>
+        </member>
+        <member name="M:TTEC.EMPOWER.API.Startup.ConfigureServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            Configure Service
+            </summary>
+            <param name="services"></param>
+        </member>
+        <member name="M:TTEC.EMPOWER.API.Startup.Configure(Microsoft.AspNetCore.Builder.IApplicationBuilder,Microsoft.AspNetCore.Hosting.IWebHostEnvironment,Microsoft.AspNetCore.Mvc.ApiExplorer.IApiVersionDescriptionProvider,Microsoft.Extensions.Logging.ILogger{TTEC.EMPOWER.API.Startup})">
+            <summary>
+            Configure middleware
+            </summary>
+            <param name="app"></param>
+            <param name="env"></param>
+        </member>
+    </members>
+</doc>

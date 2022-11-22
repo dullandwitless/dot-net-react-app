@@ -4,14 +4,14 @@ FROM --platform=$BUILDPLATFORM mcr.microsoft.com/dotnet/sdk:6.0 AS base
 
 WORKDIR /src
 
-COPY aspnetapp.csproj ./
-RUN ["dotnet", "restore"]
+COPY TTEC.EMPOWER.* ./
+# RUN ["dotnet", "restore"]
 
 FROM base as builder
 
 COPY . .
 
-CMD ["dotnet", "build", "-c", "-o", "/build"]
+CMD ["dotnet", "build", "./TTEC.EMPOWER.API/TTEC.EMPOWER.API.csproj"]
 
 FROM builder as dev-envs
 
@@ -32,11 +32,11 @@ CMD ["dotnet", "run"]
 
 FROM builder AS publisher
 
-RUN ["dotnet", "publish", "-c", "Release", "-o", "/build"]
+RUN ["dotnet", "publish", "-c", "Release", "-o", "./TTEC.EMPOWER.API"]
 
 FROM --platform=$BUILDPLATFORM mcr.microsoft.com/dotnet/aspnet:6.0
 
 WORKDIR /app
 COPY --from=publisher /build .
 
-CMD ["dotnet", "aspnetapp.dll"]
+CMD ["dotnet", "./TTEC.EMPOWER.API/TTEC.EMPOWER.API.dll"]
