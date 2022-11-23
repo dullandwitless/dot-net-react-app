@@ -8,7 +8,7 @@ function App() {
   const [weather, setWeather] = useState([]);
 
   function fetchWeatherDataHandler() {
-    fetch('https://localhost:44316/WeatherForecast')
+    fetch('http://localhost:8000/WeatherForecast')
       .then((response) => {
         return response.json();
       })

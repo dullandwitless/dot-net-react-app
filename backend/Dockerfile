@@ -11,7 +11,7 @@ FROM base as builder
 
 COPY . .
 
-CMD ["dotnet", "build", "./TTEC.EMPOWER.API/TTEC.EMPOWER.API.csproj"]
+CMD ["dotnet", "build", "./EMPOWER.sln", "-o", "/build"]
 
 FROM builder as dev-envs
 
@@ -32,11 +32,11 @@ CMD ["dotnet", "run"]
 
 FROM builder AS publisher
 
-RUN ["dotnet", "publish", "-c", "Release", "-o", "./TTEC.EMPOWER.API"]
+RUN ["dotnet", "publish", "-c", "Debug",  "./EMPOWER.sln", "-o", "/build"]
 
 FROM --platform=$BUILDPLATFORM mcr.microsoft.com/dotnet/aspnet:6.0
 
 WORKDIR /app
 COPY --from=publisher /build .
 
-CMD ["dotnet", "./TTEC.EMPOWER.API/TTEC.EMPOWER.API.dll"]
+CMD ["dotnet", "TTEC.EMPOWER.API.dll"]

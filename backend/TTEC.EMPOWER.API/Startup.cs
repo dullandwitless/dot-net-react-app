@@ -123,7 +123,7 @@ namespace TTEC.EMPOWER.API
             // app.ConfigureExceptionHandler();
 
             //Enable middleware to serve generated Swagger as a JSON endpoint
-            app.AddCustomSwagger(provider);
+            // app.AddCustomSwagger(provider);
 
             app.UseEndpoints(endpoints =>
             {
